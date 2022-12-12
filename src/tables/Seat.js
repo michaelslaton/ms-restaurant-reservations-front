@@ -3,7 +3,7 @@ import { readReservation, listTables, seatReservation } from "../utils/api";
 import TablesList from "./TablesList";
 import ErrorAlert from "../layout/ErrorAlert";
 import { useParams, useHistory } from "react-router-dom";
-import { Container, Form, Button, Row, Col } from "react-bootstrap";
+import { Container, Form, Row, Col } from "react-bootstrap";
 
 export default function Seat({ tables, setTables }) {
   const initialFormState = {

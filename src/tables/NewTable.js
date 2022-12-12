@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { createTable } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
 import { useHistory } from "react-router-dom";
-import { Container, Button, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 
 export default function NewTable() {
   const initialFormState = {

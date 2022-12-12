@@ -6,7 +6,6 @@ import ReservationsList from "../reservations/ReservationsList"
 import { useHistory } from "react-router-dom";
 import { previous, next, today } from "../utils/date-time";
 import { Container, Row, Col } from "react-bootstrap";
-import * as AiIcons from 'react-icons/ai'
 
 function Dashboard({ date, tables, setTables }) {
   const [reservations, setReservations] = useState([]);

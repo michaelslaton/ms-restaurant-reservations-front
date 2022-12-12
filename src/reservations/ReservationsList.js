@@ -1,6 +1,6 @@
 import { React } from 'react';
 import { changeReservationStatus } from "../utils/api"
-import { Table, Button } from 'react-bootstrap'
+import { Table } from 'react-bootstrap'
 
 export default function ReservationsList({ data, load, setReservationsError }){
 
