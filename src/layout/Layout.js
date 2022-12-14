@@ -1,7 +1,7 @@
 import React from "react";
 import NavbarOffcanvas from "./NavbarOffcanvas";
 import Routes from "./Routes";
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from "react-bootstrap";
 import "./Layout.css";
 
 function Layout() {
@@ -9,19 +9,14 @@ function Layout() {
     <Container fluid>
       <Row>
         <Col className="side-bar">
-
-          <NavbarOffcanvas/>
-          
+          <NavbarOffcanvas />
         </Col>
         <Col>
-
-          <Routes/>
-
+          <Routes />
         </Col>
       </Row>
       <Row>
-        <Col>
-        </Col>
+        <Col></Col>
       </Row>
     </Container>
   );

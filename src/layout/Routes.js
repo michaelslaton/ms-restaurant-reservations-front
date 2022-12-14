@@ -4,7 +4,7 @@ import Dashboard from "../dashboard/Dashboard";
 import NewReservation from "../reservations/NewReservation";
 import EditReservation from "../reservations/EditReservation";
 import Seat from "../tables/Seat";
-import Search from "../search/Search.js"
+import Search from "../search/Search.js";
 import NewTable from "../tables/NewTable";
 import NotFound from "./NotFound";
 import { today } from "../utils/date-time";

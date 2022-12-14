@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { listReservations } from "../utils/api";
-import TablesList from "../tables/TablesList"
+import TablesList from "../tables/TablesList";
 import ErrorAlert from "../layout/ErrorAlert";
-import ReservationsList from "../reservations/ReservationsList"
+import ReservationsList from "../reservations/ReservationsList";
 import { useHistory } from "react-router-dom";
 import { previous, next, today } from "../utils/date-time";
 import { Container, Row, Col } from "react-bootstrap";
@@ -12,7 +12,7 @@ function Dashboard({ date, tables, setTables }) {
   const [reservationsError, setReservationsError] = useState(null);
   const history = useHistory();
 
-// ---------------------------------------------------- Load
+  // ---------------------------------------------------- Load
   useEffect(loadDashboard, [date]);
 
   function loadDashboard() {
@@ -24,16 +24,16 @@ function Dashboard({ date, tables, setTables }) {
     return () => abortController.abort();
   }
 
-// ---------------------------------------------------- Click
+  // ---------------------------------------------------- Click
   function clickHandler({ target }) {
-    if (target.name === "previous"){
+    if (target.name === "previous") {
       history.push(`/dashboard?date=${previous(date)}`);
     }
     if (target.name === "today") history.push(`/dashboard?date=${today()}`);
     if (target.name === "next") history.push(`/dashboard?date=${next(date)}`);
   }
 
-// ---------------------------------------------------- Return
+  // ---------------------------------------------------- Return
   return (
     <Container fluid className="p-0">
       <Row className="pageHead">

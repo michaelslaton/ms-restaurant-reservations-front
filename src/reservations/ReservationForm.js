@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Form, Col, Row } from 'react-bootstrap'
+import { Container, Form, Col, Row } from "react-bootstrap";
 
 export default function ReservationForm({
   first_name,
@@ -12,8 +12,7 @@ export default function ReservationForm({
   submit,
   cancel,
 }) {
-  
-// ---------------------------------------------------- Return
+  // ---------------------------------------------------- Return
   return (
     <Container fluid className="p-0">
       <Form onSubmit={submit}>
@@ -48,15 +47,13 @@ export default function ReservationForm({
               />
             </Form.Group>
           </Col>
-
-          </Row>
-          <Row>
-
+        </Row>
+        <Row>
           <Col xs={6}>
             <Form.Group className="my-2">
               Mobile Number:
               <br />
-              <input 
+              <input
                 type="text"
                 className=""
                 id="mobile_number"
@@ -68,7 +65,6 @@ export default function ReservationForm({
               />
             </Form.Group>
           </Col>
-
 
           <Col xs={6}>
             <Form.Group className="my-2">
@@ -85,10 +81,8 @@ export default function ReservationForm({
               />
             </Form.Group>
           </Col>
-
-</Row>
-<Row>
-
+        </Row>
+        <Row>
           <Col xs={6}>
             <Form.Group className="mt-2">
               Reservation Time:
@@ -120,12 +114,10 @@ export default function ReservationForm({
                 required
               />
             </Form.Group>
-            <br/>
+            <br />
           </Col>
-
         </Row>
         <Row>
-
           <Col xs={12} className="d-flex justify-content-end mt-2">
             <button type="submit" className="form-button mr-2">
               <span className="oi oi-check"></span> Submit

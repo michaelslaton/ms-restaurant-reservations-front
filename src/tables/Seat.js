@@ -80,38 +80,45 @@ export default function Seat({ tables, setTables }) {
       <Row>
         <Col className="display-container">
           <div className="display-center">
-          <Row className="my-3">
-            <Form onSubmit={submitHandler}>
-              <Form.Group className="mb-2">
-                Seat at:
-                <select name="table_id" onChange={changeHandler}>
-                  <option value>Select Table</option>
-                  {tables.map((table) => {
-                    return (
-                      <option key={table.table_id} value={table.table_id}>
-                        {table.table_name} - {table.capacity}
-                      </option>
-                    );
-                  })}
-                </select>
-                <br />
-                <div className="d-flex justify-content-end">
-                  <button className="form-button mt-3 mr-2" type="Submit">Submit</button>
-                  <button className="form-button mt-3 mr-2" onClick={() => history.goBack()}>Cancel</button>
-                </div>
-              </Form.Group>
-            </Form>
-          </Row>
-          <Row className="my-3">
-            <TablesList
-              tables={tables}
-              setTables={setTables}
-              setReservationsError={setReservationsError}
-            />
-          </Row>
-          <Row className="d-flex justify-content-center">
-            <ErrorAlert error={reservationsError} />
-          </Row>
+            <Row className="my-3">
+              <Form onSubmit={submitHandler}>
+                <Form.Group className="mb-2">
+                  Seat at:
+                  <select name="table_id" onChange={changeHandler}>
+                    <option value>Select Table</option>
+                    {tables.map((table) => {
+                      return (
+                        <option key={table.table_id} value={table.table_id}>
+                          {table.table_name} - {table.capacity}
+                        </option>
+                      );
+                    })}
+                  </select>
+                  <br />
+                  <div className="d-flex justify-content-end">
+                    <button className="form-button mt-3 mr-2" type="Submit">
+                      Submit
+                    </button>
+                    <button
+                      className="form-button mt-3 mr-2"
+                      onClick={() => history.goBack()}
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                </Form.Group>
+              </Form>
+            </Row>
+            <Row className="my-3">
+              <TablesList
+                tables={tables}
+                setTables={setTables}
+                setReservationsError={setReservationsError}
+              />
+            </Row>
+            <Row className="d-flex justify-content-center">
+              <ErrorAlert error={reservationsError} />
+            </Row>
           </div>
         </Col>
       </Row>

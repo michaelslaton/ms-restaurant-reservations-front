@@ -8,7 +8,6 @@ export default function TablesList({
   setTables,
   load,
 }) {
-
   // ---------------------------------------------------- Load
   useEffect(loadData, [setReservationsError, setTables]);
 
@@ -20,7 +19,7 @@ export default function TablesList({
     return () => abortController.abort();
   }
 
-// ---------------------------------------------------- Finish
+  // ---------------------------------------------------- Finish
   async function finishHandler(tableId) {
     const abortController = new AbortController();
     if (
@@ -42,43 +41,47 @@ export default function TablesList({
     return;
   }
 
-// ---------------------------------------------------- Return
+  // ---------------------------------------------------- Return
   return (
     <div className="aTable">
-    <Table borderless striped size="sm">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>TABLE NAME</th>
-          <th>CAPACITY</th>
-          <th>Free?</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        
-        {tables.map((table, index) => {
-          return (
-            <tr key={table.table_id}>
-              <td>{index + 1}</td>
-              <td>{`${table.table_name}`}</td>
-              <td>{table.capacity}</td>
-              <td data-table-id-status={table.table_id}>
-                {table.reservation_id === null ? "Free" : "Occupied"}
-              </td>
-              <td>
-                {table.reservation_id !== null && (
-                  <Button data-table-id-finish={table.table_id} onClick={() =>finishHandler(table.table_id, table.reservation_id)} size="sm">
-                    Finish
-                  </Button>
-                )}
-              </td>
-            </tr>
-          );
-        })}
-
-      </tbody>
-    </Table>
+      <Table borderless striped size="sm">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>TABLE NAME</th>
+            <th>CAPACITY</th>
+            <th>Free?</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {tables.map((table, index) => {
+            return (
+              <tr key={table.table_id}>
+                <td>{index + 1}</td>
+                <td>{`${table.table_name}`}</td>
+                <td>{table.capacity}</td>
+                <td data-table-id-status={table.table_id}>
+                  {table.reservation_id === null ? "Free" : "Occupied"}
+                </td>
+                <td>
+                  {table.reservation_id !== null && (
+                    <Button
+                      data-table-id-finish={table.table_id}
+                      onClick={() =>
+                        finishHandler(table.table_id, table.reservation_id)
+                      }
+                      size="sm"
+                    >
+                      Finish
+                    </Button>
+                  )}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </Table>
     </div>
   );
 }
